@@ -71,7 +71,12 @@ p{
             }
 
             .secondery-title{
+                display: flex;
+            }
+
+            .secondery-title p{
                 font-size: 32px;
+                margin-left: 10px;
             }
         }
 
