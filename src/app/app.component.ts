@@ -20,7 +20,22 @@ export class AppComponent {
   getIp() {
     this.service.getUserIp().subscribe(res => {
       this.ipObj = res;
-      this.cords = [this.ipObj?.location.lat, this.ipObj?.location.lng];
+      this.getCords();
     })
+  }
+
+  getCords() {
+    this.cords = [this.ipObj?.location.lat, this.ipObj?.location.lng];
+  }
+
+  getDetailByIP(e: string) {
+
+    const regexExp = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/gi;
+    if (regexExp.test(e)) {
+      this.service.getUserDetailssByIP(e).subscribe(res => {
+        this.ipObj = res;
+        this.getCords();
+      });
+    }
   }
 }
