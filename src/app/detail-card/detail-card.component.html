@@ -1,19 +1,26 @@
 <div class="card">
 
-    <div class="main-section">
-            <div *ngIf="ip" class="ip-section">
-                <p class="title">Your public IP address</p>
-                <p class="ip">{{ip}}</p>
-            </div>
+    <div 
+    class="loading-background"
+    [ngStyle]="{'display': ip? 'none':'block'}"></div>
 
-            <div class="bottom-section">
-                <div class="location-section">
-                    <p class="title">Location</p>
+    <div 
+    class="main-section" 
+    [ngStyle]="{'opacity': ip? '1':'0'}">
 
-                    <div class="secondery-title">
-                        <img class="icon" src="../../assets/icons/mark.svg" alt="icon">
-                        <p>{{location}}</p>
-                    </div>
+        <div class="ip-section">
+            <p class="title">Your public IP address</p>
+            <p class="ip">{{ip}}</p>
+        </div>
+
+        <div class="bottom-section" >
+            <div class="location-section">
+                <p class="title">Location</p>
+
+                <div class="secondery-title">
+                    <img class="icon" src="../../assets/icons/mark.svg" alt="icon">
+                    <p>{{location}}</p>
+                </div>
                     
                 </div>
                 <div class="time-zone-section">
@@ -28,7 +35,9 @@
 
     <div class="divaider"></div>
 
-    <div class="second-section">
+    <div 
+    class="second-section"
+    [ngStyle]="{'opacity': ip? '1':'0'}">
         <div 
         *ngFor="let element of this.secondaryValues" 
         class="section">
