@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+$borderRadius: 15px;
+
+@font-face {
+    font-family: poppins;
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+html {
+    background-color: #2D69C2;
+    font-family: poppins;
+}
