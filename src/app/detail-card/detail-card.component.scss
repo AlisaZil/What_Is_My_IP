@@ -30,7 +30,7 @@ p{
         background-color: rgba(0, 0, 0, 0.293);
         position: fixed;
         border-radius: $borderRadius;
-        transition: 0.3s;
+        transition: 0,3;
     }
 
     .title{
@@ -118,7 +118,7 @@ p{
 
         overflow: hidden;
         white-space: nowrap;
-        width: 85%;
+        width: 75%;
         transition: 0.3s;
 
         .secondery-title{

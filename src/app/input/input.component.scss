@@ -1,0 +1,65 @@
+@import '../../styles.scss';
+
+.ip-input {
+
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 88px;
+
+    width: 44.4791vw;
+    max-width: 854px;
+
+    display: flex;
+    transition: 0.3s;
+
+    input{
+        width: 90%;
+        height: 100%;
+
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+        
+        outline: none;
+        border: none;
+
+        font-family: poppins;
+        font-size: 28px;
+        padding-left: 30px;
+    }
+
+    .search-button{
+        width: 10%;
+        height: 100%;
+        background: #173F7A;
+        position: relative;
+
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+
+        cursor: pointer;
+
+        .icon{
+            width: 50%;
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            user-select: none;
+        }
+
+        transition: 0.2s;
+    }
+
+    .search-button:hover{
+        background: darken($color: #173F7A, $amount: 3);
+    }
+
+    .search-button:active{
+        background: darken($color: #173F7A, $amount: 5);
+    }
+
+}
+
