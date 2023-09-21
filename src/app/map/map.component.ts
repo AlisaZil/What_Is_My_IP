@@ -8,26 +8,31 @@ import * as L from 'leaflet';
 })
 export class MapComponent {
 
-  @Input() cords: [number, number] = [0, 0];
-  
+  @Input() cords: [number, number]|undefined = undefined;
+
   private map: any;
+
+  ngOnChanges(): void {
+    if (this.cords) {
+      this.initMap();
+    }
+  }
   
   private initMap(): void {
-    this.map = L.map('map').setView(this.cords, 10);
+    if (this.cords) {
+      this.map = L.map('map').setView(this.cords, 10);
+      const marker = L.marker(this.cords);
+      marker.addTo(this.map);
+    }
 
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    const marker = L.marker(this.cords);
-    marker.addTo(this.map)
+    
     tiles.addTo(this.map);
 
   }
-
-
-  ngAfterViewInit(): void { 
-    this.initMap();
-  }
+  
 }

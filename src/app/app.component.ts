@@ -11,6 +11,7 @@ export class AppComponent {
   constructor(private service: ApiServieService) { }
 
   public ipObj: any;
+  public cords: [number, number]|undefined = undefined;
   
   ngOnInit(): void {
     this.getIp();
@@ -19,10 +20,7 @@ export class AppComponent {
   getIp() {
     this.service.getUserIp().subscribe(res => {
       this.ipObj = res;
+      this.cords = [this.ipObj?.location.lat, this.ipObj?.location.lng];
     })
-  }
-
-  Cords() :[number,number]{
-    return [this.ipObj.location?.lat, this.ipObj.location?.lng];
   }
 }
