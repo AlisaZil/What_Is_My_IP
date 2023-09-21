@@ -8,11 +8,21 @@ import { ApiServieService } from './api-service.service';
 })
 export class AppComponent {
 
-  // constructor(private service: ApiServieService) { }
+  constructor(private service: ApiServieService) { }
+
+  public ipObj: any;
   
-  // getIp() {
-  //   this.service.getUserIp().subscribe(res => {
-  //     console.log(res);
-  //   })
-  // }
+  ngOnInit(): void {
+    this.getIp();
+  }
+
+  getIp() {
+    this.service.getUserIp().subscribe(res => {
+      this.ipObj = res;
+    })
+  }
+
+  Cords() :[number,number]{
+    return [this.ipObj.location?.lat, this.ipObj.location?.lng];
+  }
 }
