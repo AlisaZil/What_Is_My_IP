@@ -19,6 +19,7 @@ export class MapComponent {
   }
   
   private initMap(): void {
+    
     if (this.cords) {
       this.map = L.map('map').setView(this.cords, 10);
       const marker = L.marker(this.cords);
