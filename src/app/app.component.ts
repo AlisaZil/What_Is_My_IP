@@ -7,14 +7,12 @@ import { ApiServieService } from './api-service.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ip_track';
 
-  constructor(private service: ApiServieService) { }
+  // constructor(private service: ApiServieService) { }
   
-  getIp() {
-    this.service.getUserIp().subscribe(res => {
-      console.log(res);
-      
-    })
-  }
+  // getIp() {
+  //   this.service.getUserIp().subscribe(res => {
+  //     console.log(res);
+  //   })
+  // }
 }
