@@ -13,23 +13,40 @@ export class DetailCardComponent {
   public location: string|undefined = undefined;
   public timeZone: string | undefined = undefined;
   
-  public operatingSystem: string | undefined = undefined;
-  public ISP: string | undefined = undefined;
-  public connectionType: string | undefined = undefined;
+  // public operatingSystem: string | undefined = undefined;
+  // public ISP: string | undefined = undefined;
+  // public connectionType: string | undefined = undefined;
+
+  secondaryValues: { name: string, value: string | undefined }[] = [
+  
+    {
+      name: 'Operating system',
+      value: undefined
+    },
+    {
+      name: 'ISP',
+      value: undefined
+    },
+    {
+      name: 'Connection type',
+      value: undefined
+    }
+
+  ]
 
   ngOnChanges(): void {
     this.ip = this.ipObj.ip;
     this.location = `${this.ipObj.location.city}, ${this.ipObj.location.country}`;
     this.timeZone = this.ipObj.location.timezone;
 
-    this.operatingSystem = this.getUserOperatingSystem(navigator.appVersion);
-    this.ISP = this.ipObj.as.name;
-    this.connectionType = this.ipObj.as.type
-    console.log(this.ipObj);
-    
+    this.secondaryValues.forEach((element) => {
+      element.name === 'Operating system' ? element.value = this.getUserOperatingSystem(navigator.appVersion) :
+        element.name === 'ISP' ? element.value = this.ipObj.as.name :
+          element.name === 'Connection type'? element.value = this.ipObj.as.type : false;
+    });
   }
 
-  getUserOperatingSystem(operatingSystem: string) {
+  getUserOperatingSystem(operatingSystem: string) :string |undefined {
     if (operatingSystem.includes('Windows')) {
       return 'Windows';
     }
