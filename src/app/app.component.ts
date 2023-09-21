@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiServieService } from './api-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ip_track';
+
+  // constructor(private service: ApiServieService) { }
+  
+  // getIp() {
+  //   this.service.getUserIp().subscribe(res => {
+  //     console.log(res);
+  //   })
+  // }
 }
