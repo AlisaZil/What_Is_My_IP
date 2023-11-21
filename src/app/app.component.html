@@ -2,4 +2,7 @@
     <detail-card [ipObj]="ipObj"></detail-card>
     <map [cords]="cords"></map>
 
-<!-- <input type="text" (input)="checkIfLatin($event)"> -->
+    <ng-container *ngIf="!ipObj">
+        <span class="loader"></span>
+        <div class="dim-background"></div>
+    </ng-container>
