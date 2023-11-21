@@ -9,7 +9,7 @@ export class ApiServieService {
 
   constructor(private httpClient: HttpClient) { }
 
-  readonly APIurl = 'https://geo.ipify.org/api/v2/country,city?apiKey=at_asKIjxx9xN2PGwv0JE5vdOc8hhQK8';
+  readonly APIurl = 'https://api.geoapify.com/v1/ipinfo?apiKey=cb8424a9dbdd4768be2794a53ce21b49';
 
   getUserIp(): Observable<any>{
     return this.httpClient.get<any>(this.APIurl);

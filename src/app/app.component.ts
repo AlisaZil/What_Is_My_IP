@@ -20,7 +20,13 @@ export class AppComponent {
   getIp() {
     this.service.getUserIp().subscribe(res => {
       this.ipObj = res;
-      this.cords = [this.ipObj?.location.lat, this.ipObj?.location.lng];
+      this.cords = [this.ipObj?.location.latitude, this.ipObj?.location.longitude];
     })
+  }
+
+  checkIfLatin(e:any){
+    const regexp = /[A-z\u00C0-\u00ff]+/g;
+    // console.log(i18n.detectLanguage(e.target.value);
+    
   }
 }

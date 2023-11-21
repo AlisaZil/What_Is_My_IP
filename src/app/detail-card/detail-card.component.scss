@@ -5,20 +5,18 @@ p{
 }
 
 .card{
-
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+    top: 22%;
+    left: 55px;
+    right: 55%;
 
-    width: 44.4791vw;
-    max-width: 854px;
-    height: 361px;
+    margin: 10px;
+    padding: 50px 0;
     background: #FFF;
     border-radius: $borderRadius;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     transition: 0.3s;
 
@@ -35,56 +33,51 @@ p{
 
     .title{
         color: #7D7D7D;
-        font-size: 24px;
+        font-size: 2vw;
         user-select: none;
         transition: 0.3s;
     }
 
     .main-section{
 
-        width: 60%;
+        width: 100%;
         height: 100%;
         transition: 0.3s;
 
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
 
         .ip-section {
-            margin-left: 40px;
-            margin-top: -10px;
             margin-bottom: 20px;
             
-            overflow: hidden;
-            white-space: nowrap;
-            width: 85%;
-            
             .title {
-                font-size: 28px; 
+                font-size: 2.3vw; 
             }
         
             .ip {
-                font-size: 60px;
+                font-size: 3.8vw;
             }
         }
 
         .bottom-section{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-left: 40px;
 
-            .time-zone-section{
-                margin-right: 120px;
-                overflow: hidden;
-                white-space: nowrap;
+            margin-top: 20px;
+            width: 80%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-bottom: 30px;
+
+            border-bottom: #e0e0e0 1px solid;
+
+            .country-section{
+                margin-left: 50px;
             }
 
-            .location-section{
-                overflow: hidden;
-                white-space: nowrap;
+            .city-section{
+                white-space: pre-wrap;
             }
 
             .secondery-title{
@@ -92,9 +85,10 @@ p{
             }
 
             .secondery-title p{
-                font-size: 32px;
-                margin-left: 10px;
+                font-size: 2vw;
+                margin-left: 11px;
             }
+            
         }
 
     }
