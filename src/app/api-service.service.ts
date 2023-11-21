@@ -15,6 +15,7 @@ export class ApiServieService {
     return this.httpClient.get<any>(this.APIurl);
   }
 
+  
   getUserDetailssByIP(ipAddress:string): Observable<any>{
     return this.httpClient.get<any>(this.APIurl + `&ipAddress=${ipAddress}`);
   }
